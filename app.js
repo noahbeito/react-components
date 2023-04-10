@@ -1,3 +1,5 @@
+const { useState } = React;
+
 const App = () => (
   <div>
     <h2>My Grocery List</h2>
@@ -14,9 +16,18 @@ const GroceryList = (props) => (
     </ul>
 );
 
-const GroceryListItem = (props) => (
-    <li>{props.item}</li>
-);
+const GroceryListItem = (props) => {
+  const [isBold, setBold] = useState(false);
+
+  const style = {
+    fontWeight: isBold ? 'bold' : 'normal'
+  }
+
+  return (
+    <li style={style} onMouseEnter={() => setBold(true)} onMouseLeave={() => setBold(false)}>{props.item}</li>
+  )
+}
+
 
 
 ReactDOM.render(<App />, document.getElementById('app'))
