@@ -1,16 +1,15 @@
+
 const GroceryList = () => (
-    <ul>
-      <Apples />
-      <Bananas />
-    </ul>
+    <div>
+      <GroceryListItem items={['apples', 'bananas']}/>
+    </div>
 );
 
-const Apples = () => (
-  <li>apples</li>
-);
-
-const Bananas = () => (
-  <li>bananas</li>
+const GroceryListItem = (props) => (
+  <ul>
+    <li>{props.items[0]}</li>
+    <li>{props.items[1]}</li>
+  </ul>
 );
 
 
