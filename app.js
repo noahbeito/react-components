@@ -1,11 +1,14 @@
 const { useState } = React;
 
-const App = () => (
+const App = () => {
+
+  return (
   <div>
     <h2>My Grocery List</h2>
-    <GroceryList items={['apples', 'bananas']}/>
+    <GroceryList items={['apples', 'bananas', 'bread', 'rice']}/>
   </div>
-);
+  )
+};
 
 
 const GroceryList = (props) => (
@@ -26,8 +29,8 @@ const GroceryListItem = (props) => {
   return (
     <li style={style} onMouseEnter={() => setBold(true)} onMouseLeave={() => setBold(false)}>{props.item}</li>
   )
-}
+};
 
 
 
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'));
