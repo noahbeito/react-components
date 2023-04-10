@@ -1,16 +1,22 @@
+const App = () => (
+  <div>
+    <h2>My Grocery List</h2>
+    <GroceryList items={['apples', 'bananas']}/>
+  </div>
+);
 
-const GroceryList = () => (
-    <div>
-      <GroceryListItem items={['apples', 'bananas']}/>
-    </div>
+
+const GroceryList = (props) => (
+    <ul>
+      {props.items.map((item) => (
+        <GroceryListItem item={item} />
+      ))}
+    </ul>
 );
 
 const GroceryListItem = (props) => (
-  <ul>
-    <li>{props.items[0]}</li>
-    <li>{props.items[1]}</li>
-  </ul>
+    <li>{props.item}</li>
 );
 
 
-ReactDOM.render(<GroceryList />, document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'))
